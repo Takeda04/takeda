@@ -23,7 +23,7 @@ function getFilms(films) {
             <img class="filmImg" src="${film.poster}" alt="Maket">
             <div class="date">${hour} | ${year}</div>
             <div class="genres">${film.genres.join(' , ')}</div>
-            <div class="id">${film.id}</div>
+            <div class="id" >${film.id}</div>
             <button class="times btn-danger rounded">Delete</button>
         </div>
         `

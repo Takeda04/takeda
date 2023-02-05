@@ -1,9 +1,15 @@
 .film-area{
+	
 	grid-template-columns: auto auto auto auto;
 }
+
 
 
 .searchBtn{
 	padding: 10px;
 	border: 1px solid #000;
+}
+
+.id{
+	opacity: 0;
 }
