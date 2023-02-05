@@ -35,6 +35,7 @@ searchBtn.addEventListener('click', ()=>{
     form.reset();
 })
 
+
 function searchPanel(val){
     let newFilms = []
 
