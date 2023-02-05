@@ -1,11 +1,10 @@
 import {films} from './films.js'
-let form = document.querySelector('.form')
-let filmArea = document.querySelector('.film-area')
-let searchBtn = document.querySelector('.searchBtn')
-let input = document.querySelector('.serachPanel')
-let elSelect = document.querySelector('.select')
+const form = document.querySelector('.form')
+const filmArea = document.querySelector('.film-area')
+const searchBtn = document.querySelector('.searchBtn')
+const elSelect = document.querySelector('.select')
 let val
-let date , hour ,year
+let date , hour ,year;
 
 function timer(time) {
     date = new Date(time)
@@ -20,10 +19,12 @@ function getFilms(films) {
         timer(film.release_date)
         filmArea.innerHTML += `
         <div class="card">
-            <h3 class="title w-100 h-50 m-1 fs-5 d-flex align-items-end">${film.title}</h3>
+            <p class="title">${film.title}</p>
             <img class="filmImg" src="${film.poster}" alt="Maket">
             <div class="date">${hour} | ${year}</div>
             <div class="genres">${film.genres.join(' , ')}</div>
+            <div class="id">${film.id}</div>
+            <button class="times btn-danger rounded">Delete</button>
         </div>
         `
     })
@@ -34,7 +35,6 @@ searchBtn.addEventListener('click', ()=>{
     searchPanel(val.toLowerCase())
     form.reset();
 })
-
 
 function searchPanel(val){
     let newFilms = []
@@ -47,11 +47,11 @@ function searchPanel(val){
             getFilms(newFilms)
         }
     })
+
 }
 
 let imei = [];
 function renderGenres(){
-
     films.forEach((film) =>{
         film.genres.forEach((genre) =>{
            imei.push(genre)
@@ -65,12 +65,16 @@ renderGenres();
 elSelect.addEventListener('change', (evt) => {
    evt.preventDefault();
    let set = evt.target.value;
+   if(set === 'All'){
+    getFilms(films)
+   }
    imei.forEach((item) => {
     if(set  === item){
-        console.log(item)
+        filmArea.innerHTML = ''
         filterFilms(item)
     }
    })
+   
 })
 
 function filterFilms(name){
@@ -83,3 +87,15 @@ function filterFilms(name){
         }
     })
 }
+
+filmArea.addEventListener('click', e =>{
+    let target = e.target
+    if(target.tagName === 'BUTTON'){
+        let id = target.parentElement.children[4].textContent
+        films.forEach((item) =>{
+            if(item.id === id){
+                target.parentElement.remove()
+            }
+        })
+    }
+})
