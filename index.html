@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movie App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+
+	<div class="container">
+    <section>
+    <nav class="nav w-100 h-100 d-flex justify-content-between align-items-center border-box py-1 px-4">
+      <div class="outsiteLogo d-flex align-items-center gap-4 my-3">
+        <div class="logo fs-1">Movie App</div>
+        <select class="select">
+          <option value="All" >All</option>
+          <option value="Action">Action</option>
+          <option value="Animation">Animation</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Horror">Horror</option>
+          <option value="Family">Family</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Documentary">Documentary</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Drama">Drama</option>
+          <option value="TV Movie">TV Movie</option>
+        </select>
+      </div>
+      <div>
+        <form class="form d-flex">
+          <input class="serachPanel w-100 m-0 fs-4 mx-xl-5" type="text" placeholder="Movie name..">
+          <a href="#" class="searchBtn text-secondary rounded"value="Search">Search</a>
+        </form>
+      </div>
+    </nav>
+    <div class="main w-100 h-auto box-sizing">
+      <div class="film-area d-grid w-100 h-100 gap-3">
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
+
